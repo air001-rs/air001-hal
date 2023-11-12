@@ -1,0 +1,13 @@
+[package]
+name = "air001-hal"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "HAL for Air001 microcontroller"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+air001-pac = "0.0.1"
+cortex-m = "0.7.7"
+cortex-m-rt = "0.7.3"
