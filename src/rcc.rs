@@ -163,7 +163,7 @@ impl CFGR {
         let pclk = hclk / (ppre as u32);
 
         // Adjust flash wait state.
-        unsafe { flash.acr.write(|w| w.latency().bit(r_sysclk <= 24_000_000)) }
+        flash.acr.write(|w| w.latency().bit(r_sysclk <= 24_000_000));
 
         // Enable the requested clock
         self::inner::enable_clock(&mut self.rcc, &self.clock_src);
