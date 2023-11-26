@@ -31,7 +31,7 @@ pub struct Rcc {
 mod inner {
     use crate::pac::RCC;
 
-    pub(super) const HSI: u32 = 8_000_000; // 8 MHz
+    pub(super) const HSI: u32 = 24_000_000; // 24 MHz
 
     pub(super) enum SystClkSource {
         HSI,
@@ -163,7 +163,7 @@ impl CFGR {
         let pclk = hclk / (ppre as u32);
 
         // Adjust flash wait state.
-        flash.acr.write(|w| w.latency().bit(r_sysclk <= 24_000_000));
+        flash.acr.write(|w| w.latency().bit(r_sysclk > 24_000_000));
 
         // Enable the requested clock
         self::inner::enable_clock(&mut self.rcc, &self.clock_src);
@@ -179,7 +179,7 @@ impl CFGR {
                     .hpre()
                     .bits(hpre_bits)
                     .sw()
-                    .bits(0b010) // PLL CLK
+                    .bits(0b000) // HSISYS
             });
         }
 
