@@ -1,14 +1,8 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+//! HAL for Air001 microcontroller
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#![no_std]
+#![deny(rustdoc::broken_intra_doc_links)]
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use air001_pac as pac;
+
+pub mod rcc;

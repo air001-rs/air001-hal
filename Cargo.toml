@@ -8,6 +8,7 @@ description = "HAL for Air001 microcontroller"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-air001-pac = "0.0.1"
+air001-pac = "0.0.2"
 cortex-m = "0.7.7"
 cortex-m-rt = "0.7.3"
+fugit = "0.3.7"
