@@ -1,4 +1,4 @@
-use core::{marker::PhantomData, convert::Infallible};
+use core::{convert::Infallible, marker::PhantomData};
 
 use crate::rcc::Rcc;
 
@@ -602,5 +602,23 @@ gpio!([
         PB13: (pb13, 13, Input<Floating>),
         PB14: (pb14, 14, Input<Floating>),
         PB15: (pb15, 15, Input<Floating>),
+    ],
+    GPIOF, gpiof, gpiofen, PF, [
+        PF0: (pf0, 0, Input<Floating>),
+        PF1: (pf1, 1, Input<Floating>),
+        PF2: (pf2, 2, Input<Floating>),
+        PF3: (pf3, 3, Input<Floating>),
+        PF4: (pf4, 4, Input<Floating>),
+        PF5: (pf5, 5, Input<Floating>),
+        PF6: (pf6, 6, Input<Floating>),
+        PF7: (pf7, 7, Input<Floating>),
+        PF8: (pf8, 8, Input<Floating>),
+        PF9: (pf9, 9, Input<Floating>),
+        PF10: (pf10, 10, Input<Floating>),
+        PF11: (pf11, 11, Input<Floating>),
+        PF12: (pf12, 12, Input<Floating>),
+        PF13: (pf13, 13, Input<Floating>),
+        PF14: (pf14, 14, Input<Floating>),
+        PF15: (pf15, 15, Input<Floating>),
     ]
 ]);

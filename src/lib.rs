@@ -5,6 +5,6 @@
 
 pub use air001_pac as pac;
 
-pub mod rcc;
 pub mod gpio;
 pub mod prelude;
+pub mod rcc;
