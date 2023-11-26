@@ -34,6 +34,22 @@ pub struct AF5;
 pub struct AF6;
 /// Alternate function 7
 pub struct AF7;
+/// Alternate function 8
+pub struct AF8;
+/// Alternate function 9
+pub struct AF9;
+/// Alternate function 10
+pub struct AF10;
+/// Alternate function 11
+pub struct AF11;
+/// Alternate function 12
+pub struct AF12;
+/// Alternate function 13
+pub struct AF13;
+/// Alternate function 14
+pub struct AF14;
+/// Alternate function 15
+pub struct AF15;
 
 /// Alternate function mode (type state)
 pub struct Alternate<AF> {
@@ -190,7 +206,9 @@ macro_rules! gpio {
 
                 use super::{
                     Alternate, Analog, Floating, GpioExt, Input, OpenDrain, Output,
-                    PullDown, PullUp, PushPull, AF0, AF1, AF2, AF3, AF4, AF5, AF6, AF7,
+                    PullDown, PullUp, PushPull,
+                    AF0, AF1, AF2, AF3, AF4, AF5, AF6, AF7,
+                    AF8, AF9, AF10, AF11, AF12, AF13, AF14, AF15,
                     Pin, GpioRegExt,
                 };
 
@@ -306,6 +324,70 @@ macro_rules! gpio {
                             self, _cs: &CriticalSection
                         ) -> $PXi<Alternate<AF7>> {
                             _set_alternate_mode($i, 7);
+                            $PXi { _mode: PhantomData }
+                        }
+
+                        /// Configures the pin to operate in AF8 mode
+                        pub fn into_alternate_af8(
+                            self, _cs: &CriticalSection
+                        ) -> $PXi<Alternate<AF8>> {
+                            _set_alternate_mode($i, 8);
+                            $PXi { _mode: PhantomData }
+                        }
+
+                        /// Configures the pin to operate in AF9 mode
+                        pub fn into_alternate_af9(
+                            self, _cs: &CriticalSection
+                        ) -> $PXi<Alternate<AF9>> {
+                            _set_alternate_mode($i, 9);
+                            $PXi { _mode: PhantomData }
+                        }
+
+                        /// Configures the pin to operate in AF10 mode
+                        pub fn into_alternate_af10(
+                            self, _cs: &CriticalSection
+                        ) -> $PXi<Alternate<AF10>> {
+                            _set_alternate_mode($i, 10);
+                            $PXi { _mode: PhantomData }
+                        }
+
+                        /// Configures the pin to operate in AF11 mode
+                        pub fn into_alternate_af11(
+                            self, _cs: &CriticalSection
+                        ) -> $PXi<Alternate<AF11>> {
+                            _set_alternate_mode($i, 11);
+                            $PXi { _mode: PhantomData }
+                        }
+
+                        /// Configures the pin to operate in AF12 mode
+                        pub fn into_alternate_af12(
+                            self, _cs: &CriticalSection
+                        ) -> $PXi<Alternate<AF12>> {
+                            _set_alternate_mode($i, 12);
+                            $PXi { _mode: PhantomData }
+                        }
+
+                        /// Configures the pin to operate in AF13 mode
+                        pub fn into_alternate_af13(
+                            self, _cs: &CriticalSection
+                        ) -> $PXi<Alternate<AF13>> {
+                            _set_alternate_mode($i, 13);
+                            $PXi { _mode: PhantomData }
+                        }
+
+                        /// Configures the pin to operate in AF14 mode
+                        pub fn into_alternate_af14(
+                            self, _cs: &CriticalSection
+                        ) -> $PXi<Alternate<AF14>> {
+                            _set_alternate_mode($i, 14);
+                            $PXi { _mode: PhantomData }
+                        }
+
+                        /// Configures the pin to operate in AF15 mode
+                        pub fn into_alternate_af15(
+                            self, _cs: &CriticalSection
+                        ) -> $PXi<Alternate<AF15>> {
+                            _set_alternate_mode($i, 15);
                             $PXi { _mode: PhantomData }
                         }
 

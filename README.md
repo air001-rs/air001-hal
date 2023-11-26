@@ -10,9 +10,7 @@ Some of the implementation was shamelessly adapted from the [stm32f0xx-hal](http
   - [x] HSI: High Speed Internal
   - [ ] HSE: High Speed External
   - [ ] CSS: Clock Security System
-- [ ] GPIO: General Purpose Input/Output
-  - [x] GPIOA, GPIOB
-  - [ ] GPIOF
+- [x] GPIO: General Purpose Input/Output
 - [ ] USART: Universal Synchronous Asynchronous Receiver Transmitter
 - [ ] I2C: Inter-intergrated Circuit interface
 - [ ] SPI: Serial Peripheral Interface
