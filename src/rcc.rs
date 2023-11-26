@@ -56,7 +56,7 @@ mod inner {
 
     pub(super) fn enable_pll(rcc: &mut RCC, c_src: &SystClkSource, ppre_bits: u8, hpre_bits: u8) {
         // Set PLL source
-        match (c_src) {
+        match c_src {
             SystClkSource::HSI => rcc.pllcfgr.modify(|_, w| w.pllsrc().clear_bit()),
         }
 

@@ -9,6 +9,7 @@ dependencies = [
  "air001-pac",
  "cortex-m",
  "cortex-m-rt",
+ "embedded-hal",
  "fugit",
 ]
 
