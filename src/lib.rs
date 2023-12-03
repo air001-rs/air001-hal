@@ -8,3 +8,5 @@ pub use air001_pac as pac;
 pub mod gpio;
 pub mod prelude;
 pub mod rcc;
+pub mod serial;
+pub mod time;

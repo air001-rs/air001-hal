@@ -1,6 +1,6 @@
 //! # Reset & Clock Control
 use crate::pac::RCC;
-use fugit::HertzU32 as Hertz;
+use crate::time::Hertz;
 
 use self::inner::SystClkSource;
 
@@ -89,7 +89,7 @@ impl CFGR {
     where
         F: Into<Hertz>,
     {
-        self.hclk = Some(freq.into().raw());
+        self.hclk = Some(freq.into().0);
         self
     }
 
@@ -97,7 +97,7 @@ impl CFGR {
     where
         F: Into<Hertz>,
     {
-        self.pclk = Some(freq.into().raw());
+        self.pclk = Some(freq.into().0);
         self
     }
 
@@ -105,7 +105,7 @@ impl CFGR {
     where
         F: Into<Hertz>,
     {
-        self.sysclk = Some(freq.into().raw());
+        self.sysclk = Some(freq.into().0);
         self
     }
 
@@ -185,9 +185,9 @@ impl CFGR {
 
         Rcc {
             clocks: Clocks {
-                hclk: Hertz::Hz(hclk),
-                pclk: Hertz::Hz(pclk),
-                sysclk: Hertz::Hz(sysclk),
+                hclk: Hertz(hclk),
+                pclk: Hertz(pclk),
+                sysclk: Hertz(sysclk),
             },
             regs: self.rcc,
         }

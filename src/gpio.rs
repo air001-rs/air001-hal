@@ -240,6 +240,7 @@ macro_rules! gpio {
                     let offset2 = 4 * index;
                     unsafe {
                         let reg = &(*$GPIOX::ptr());
+                        // select alternate function
                         if offset2 < 32 {
                             reg.afrl.modify(|r, w| {
                                 w.bits((r.bits() & !(0b1111 << offset2)) | (mode << offset2))
@@ -250,6 +251,13 @@ macro_rules! gpio {
                                 w.bits((r.bits() & !(0b1111 << offset2)) | (mode << offset2))
                             });
                         }
+
+                        // set speed to highest
+                        reg.ospeedr.modify(|r, w| {
+                            w.bits(r.bits() & !(0b11 << offset))
+                        });
+
+                        // enable alternate mode (0b10)
                         reg.moder.modify(|r, w| {
                             w.bits((r.bits() & !(0b11 << offset)) | (0b10 << offset))
                         });
