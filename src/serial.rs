@@ -94,7 +94,6 @@ usart_pins! {
     }
 }
 
-
 /// Serial abstraction
 pub struct Serial<USART, TXPIN, RXPIN> {
     usart: USART,
@@ -400,7 +399,7 @@ fn read(usart: *const SerialRegisterBlock) -> nb::Result<u8, Error> {
     let isr = unsafe { (*usart).sr.read() };
 
     // NOTE(unsafe) read dr after sr clears pe,fe,ne,ore
-    let data = unsafe {(*usart).dr.read().dr().bits() as u8};
+    let data = unsafe { (*usart).dr.read().dr().bits() as u8 };
 
     if isr.pe().bit_is_set() {
         Err(nb::Error::Other(Error::Parity))

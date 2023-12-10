@@ -7,11 +7,13 @@ name = "air001-hal"
 version = "0.1.0"
 dependencies = [
  "air001-pac",
+ "cast",
  "cortex-m",
  "cortex-m-rt",
  "embedded-hal",
  "fugit",
  "nb 1.1.0",
+ "void",
 ]
 
 [[package]]
@@ -40,6 +42,12 @@ name = "bitfield"
 version = "0.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "46afbd2983a5d5a7bd740ccb198caf5b82f45c40c09c0eed36052d91cb92e719"
+
+[[package]]
+name = "cast"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "37b2a672a2cb129a2e41c10b1224bb368f9f37a2b16b612598138befd7b37eb5"
 
 [[package]]
 name = "cortex-m"

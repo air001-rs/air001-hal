@@ -197,6 +197,7 @@ impl CFGR {
 /// Frozen clock frequency
 ///
 /// The existence of this value indicates that the clock configuration can no longer be changed.
+#[derive(Clone, Copy)]
 pub struct Clocks {
     hclk: Hertz,
     pclk: Hertz,
