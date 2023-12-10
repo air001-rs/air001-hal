@@ -13,3 +13,4 @@ pub mod rcc;
 pub mod serial;
 pub mod time;
 pub mod timers;
+pub mod watchdog;
