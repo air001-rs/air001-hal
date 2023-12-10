@@ -8,7 +8,7 @@ Some of the implementation was shamelessly adapted from the [stm32f0xx-hal](http
 
 ##  Peripheral status
 
-Not fully tested yet.
+Not fully tested yet. 
 
 - [ ] RCC: Reset and Clock Control
   - [x] HSI: High Speed Internal
@@ -17,7 +17,7 @@ Not fully tested yet.
 - [x] GPIO: General Purpose Input/Output
 - [x] USART: Universal Synchronous Asynchronous Receiver Transmitter
 - [ ] I2C: Inter-intergrated Circuit interface
-- [ ] SPI: Serial Peripheral Interface
+- [x] SPI: Serial Peripheral Interface
 - [ ] DMA: Direct Memory Access control
 - [ ] ADC: Analog to Digital Converter
 - [x] ADTM: Advanced control Timer (TIM1)
